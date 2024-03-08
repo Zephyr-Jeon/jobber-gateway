@@ -16,12 +16,12 @@ export class SocketIOAppHandler {
   constructor(io: Server) {
     this.io = io;
     this.gatewayCache = new GatewayCache();
-    // this.chatSocketServiceIOConnections();
+    this.chatSocketServiceIOConnections();
     // this.orderSocketServiceIOConnections();
   }
 
   public listen(): void {
-    // this.chatSocketServiceIOConnections();
+    this.chatSocketServiceIOConnections();
     // this.orderSocketServiceIOConnections();
     this.io.on('connection', async (socket: Socket) => {
       socket.on('getLoggedInUsers', async () => {
